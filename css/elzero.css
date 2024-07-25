@@ -432,6 +432,9 @@ header .other-links:hover .mega-menu {
   color: var(--main-color);
   font-weight: bold;
 }
+.articles .text a {
+  color: var(--main-color);
+}
 .articles .article:hover .text i {
   animation: arrow-right 0.5s linear infinite;
 }
@@ -622,3 +625,45 @@ header .other-links:hover .mega-menu {
   left: 0;
 }
 /*end features section*/
+
+/*start testimonials section*/
+.testimonials {
+  background-color: var(--main-background-color);
+}
+.testimonials .container {
+  padding-top: var(--main-section-padding);
+  padding-bottom: var(--main-section-padding);
+}
+.testimonials .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+.testimonials .box {
+  background-color: white;
+  position: relative;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 10%);;
+}
+.testimonials .box img {
+  border-radius: 50%;
+  border: 10px solid var(--main-background-color);
+  width: 100px;
+  position: absolute;
+  right: -10px;
+  top: -50px;
+}
+.testimonials .box p:first-of-type {
+  color: #777;
+  margin: 10px 0;
+}
+.testimonials .box i.fa-solid {
+  color: #ffc107;
+}
+.testimonials .box p:last-of-type {
+  color: #666;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+/*end testimonials section*/
