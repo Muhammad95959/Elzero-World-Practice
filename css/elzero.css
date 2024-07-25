@@ -477,7 +477,7 @@ header .other-links:hover .mega-menu {
   width: 0;
   height: 0;
   background-color: rgba(255, 255, 255, 20%);
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
 .gallery .image:hover::after {
   animation: expand 0.3s ease-in;
@@ -644,7 +644,7 @@ header .other-links:hover .mega-menu {
   position: relative;
   padding: 20px;
   border-radius: 6px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 10%);;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 10%);
 }
 .testimonials .box img {
   border-radius: 50%;
@@ -667,3 +667,83 @@ header .other-links:hover .mega-menu {
   line-height: 1.6;
 }
 /*end testimonials section*/
+
+/*start members section*/
+.members .container {
+  padding-top: var(--main-section-padding);
+  padding-bottom: var(--main-section-padding);
+}
+.members .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+.members .box {
+  position: relative;
+}
+.members .box::before {
+  content: "";
+  width: calc(100% - 60px);
+  height: 100%;
+  border-radius: 10px;
+  background-color: #f3f3f3;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -2;
+}
+.members .box::after {
+  content: "";
+  width: 0;
+  height: 100%;
+  border-radius: 10px;
+  background-color: #e4e4e4;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+  transition-duration: var(--main-transition-duration);
+}
+.members .box:hover::after {
+  width: calc(100% - 60px);
+}
+.members .box .row {
+  display: flex;
+  align-items: center;
+}
+.members .box img {
+  margin-top: 60px;
+  width: calc(100% - 60px);
+  border-radius: 10px;
+  transition-duration: var(--main-transition-duration);
+}
+.members .box:hover img {
+  filter: grayscale(1);
+}
+.members .box .icons {
+  margin: 60px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.members .box a {
+  display: block;
+  color: #777;
+  padding: 10px;
+}
+.members .box a:hover {
+  color: var(--main-color);
+}
+.members .box .text {
+  margin: 25px 0 25px 80px;
+}
+.members .box h3 {
+  color: var(--main-color);
+  font-size: 22px;
+  margin-bottom: 10px;
+  transition-duration: var(--main-transition-duration);
+}
+.members .box:hover h3 {
+  filter: grayscale(1);
+}
+/*end members section*/
