@@ -829,3 +829,46 @@ header .other-links:hover .mega-menu {
   margin-right: 15px;
 }
 /*end services section*/
+
+/*start skills section*/
+.skills .container {
+  padding-top: var(--main-section-padding);
+  padding-bottom: var(--main-section-padding);
+}
+.skills .content {
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 992px) {
+  .skills img {
+    display: none;
+  }
+}
+.skills .content > div {
+  flex: 1;
+}
+.skills .skill {
+  position: relative;
+}
+.skills .skill .bar {
+  height: 30px;
+  width: 100%;
+  background-color: #eee;
+  margin: 15px 0;
+}
+.skills .skill .bar span {
+  display: block;
+  height: 100%;
+  background-color: var(--main-color);
+}
+.skills .skill h6 {
+  position: absolute;
+  right: 0;
+  top: 1px;
+  border: 1px solid #ccc;
+  color: var(--main-color);
+  padding: 3px 5px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+/*end skills section*/
