@@ -929,6 +929,7 @@ header .other-links:hover .mega-menu {
 }
 .function .box * {
   z-index: 1;
+  cursor: default;
 }
 .function .box img {
   width: 60px;
@@ -998,6 +999,9 @@ header .other-links:hover .mega-menu {
 }
 .events .box:hover {
   border: 1px solid var(--main-color);
+}
+.events .box * {
+  cursor: default;
 }
 .events .box h2 {
   color: var(--main-color);
@@ -1087,3 +1091,166 @@ header .other-links:hover .mega-menu {
   }
 }
 /*end events section*/
+
+/*start pricing section*/
+.pricing {
+  position: relative;
+}
+.pricing::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-background-color);
+  z-index: -2;
+}
+.pricing > img:first-of-type {
+  position: absolute;
+  top: 150px;
+  right: 20px;
+  z-index: -1;
+}
+.pricing > img:last-of-type {
+  position: absolute;
+  bottom: 150px;
+  left: 20px;
+  z-index: -1;
+}
+@media (max-width: 1200px) {
+  .pricing > img {
+    display: none;
+  }
+}
+.pricing .container {
+  padding-top: var(--main-section-padding);
+  padding-bottom: var(--main-section-padding);
+}
+.pricing .content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+.pricing .box {
+  position: relative;
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow:
+    0px 12px 20px 0px rgb(0 0 0 / 13%),
+    0px 2px 4px 0px rgb(0 0 0 / 12%);
+}
+@media (min-width: 1200px) {
+  .pricing .box:nth-of-type(2) {
+    top: -20px;
+  }
+}
+.pricing .box::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 50%;
+  background-color: #f6f6f6;
+  transition-duration: var(--main-transition-duration);
+}
+.pricing .box::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 50%;
+  background-color: #f6f6f6;
+  transition-duration: var(--main-transition-duration);
+}
+.pricing .box:hover::before,
+.pricing .box:hover::after {
+  width: 100%;
+}
+.pricing .box * {
+  z-index: 1;
+}
+.pricing .box:nth-of-type(2) span {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  background-color: var(--main-color);
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 10px 40px 10px 10px;
+  position: absolute;
+  transform-origin: top left;
+  transform: rotate(90deg);
+  top: 0;
+  right: -135px;
+}
+.pricing .box:nth-of-type(2) span::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  border: 20px solid;
+  border-color: transparent white transparent transparent;
+}
+.pricing .box h2:first-of-type {
+  margin: 10px 0 30px;
+}
+.pricing .box img {
+  width: 80px;
+  margin-bottom: 30px;
+}
+.pricing .box h2:last-of-type {
+  color: var(--main-color);
+  font-size: 60px;
+}
+.pricing .box p {
+  color: #777;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+.pricing .box ul {
+  align-self: flex-start;
+  width: 100%;
+}
+.pricing .box li {
+  padding: 20px 0;
+  position: relative;
+}
+.pricing .box li::before {
+  font-family: FontAwesome;
+  content: "\f00c";
+  color: var(--main-color);
+  margin-right: 10px;
+}
+.pricing .box li::after {
+  content: "";
+  width: calc(100% + 40px);
+  height: 1px;
+  position: absolute;
+  top: 0;
+  left: -20px;
+  background-color: #eee;
+}
+.pricing .box a {
+  display: block;
+  color: var(--main-color);
+  border-radius: 6px;
+  border: 2px solid var(--main-color);
+  padding: 15px 20px;
+  font-weight: bold;
+  margin: 20px 0;
+  transition-duration: var(--main-transition-duration);
+}
+.pricing .box a:hover {
+  color: white;
+  background-color: var(--main-color);
+}
+/*end pricing section*/
