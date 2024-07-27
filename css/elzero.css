@@ -1315,3 +1315,79 @@ header .other-links:hover .mega-menu {
   padding: 20px;
 }
 /*end videos section*/
+
+/*start stats section*/
+.stats {
+  background-image: url("../images/stats.jpg");
+  background-size: cover;
+  position: relative;
+}
+.stats::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 95%);
+}
+.stats .container {
+  padding-top: var(--main-section-padding);
+  padding-bottom: var(--main-section-padding);
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+.stats .container > h2 {
+  font-size: 38px;
+  margin-bottom: 50px;
+}
+.stats .content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+.stats .box {
+  background-color: white;
+  padding: 30px;
+  position: relative;
+}
+.stats .box::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 2px;
+  height: 0;
+  background-color: var(--main-color);
+  transition-duration: 1s;
+}
+.stats .box::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 2px;
+  height: 0;
+  background-color: var(--main-color);
+  transition-duration: 1s;
+}
+.stats .box:hover::before,
+.stats .box:hover::after {
+  height: 100%;
+}
+.stats .box i {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+.stats .box h2 {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+.stats .box p {
+  color: var(--main-color);
+  font-weight: bold;
+  font-style: italic;
+  font-size: 20px;
+}
+/*end stats section*/
