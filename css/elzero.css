@@ -93,6 +93,24 @@ a {
 .main-heading:hover::after {
   animation: move-left 0.7s ease-in forwards;
 }
+.spikes {
+  position: relative;
+  background: white;
+  height: 0;
+}
+.spikes::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  left: -0%;
+  top: 100%;
+  z-index: 10;
+  display: block;
+  height: 30px;
+  background-size: 30px 100%;
+  background-image: linear-gradient(135deg, white 25%, transparent 25%), linear-gradient(225deg, white 25%, transparent 25%);
+  background-position: 0 0;
+}
 /*end global rules*/
 
 /*start animations*/
@@ -155,7 +173,8 @@ a {
   }
 }
 @keyframes change-background {
-  0%, 100% {
+  0%,
+  100% {
     background-image: url("../images/discount-background1.jpg");
   }
   50% {
@@ -406,6 +425,9 @@ header .other-links:hover .mega-menu {
   box-shadow: 0 2px 15px rgb(0 0 0 / 10%);
   transition-duration: var(--main-transition-duration);
 }
+.articles .article *:not(a) {
+  cursor: default;
+}
 .articles .article:hover {
   box-shadow: 0 2px 15px rgb(0 0 0 / 20%);
   transform: translateY(-10px);
@@ -510,6 +532,9 @@ header .other-links:hover .mega-menu {
 .features .box {
   border: 1px solid #ccc;
   overflow: hidden;
+}
+.features .box *:not(a) {
+  cursor: default;
 }
 .features .image {
   position: relative;
@@ -717,6 +742,9 @@ header .other-links:hover .mega-menu {
 .members .box:hover::after {
   width: calc(100% - 60px);
 }
+.members .box *:not(.icons *) {
+  cursor: default;
+}
 .members .box .row {
   display: flex;
   align-items: center;
@@ -798,6 +826,9 @@ header .other-links:hover .mega-menu {
 }
 .services .box:hover::before {
   width: 100%;
+}
+.services .box *:not(a) {
+  cursor: default;
 }
 .services i {
   font-size: 60px;
@@ -1183,6 +1214,9 @@ header .other-links:hover .mega-menu {
 .pricing .box * {
   z-index: 1;
 }
+.pricing .box *:not(a) {
+  cursor: default;
+}
 .pricing .box:nth-of-type(2) span {
   display: flex;
   align-items: center;
@@ -1381,6 +1415,9 @@ header .other-links:hover .mega-menu {
 .stats .box:hover::after {
   height: 100%;
 }
+.stats .box * {
+  cursor: default;
+}
 .stats .box i {
   font-size: 36px;
   margin-bottom: 10px;
@@ -1491,3 +1528,133 @@ header .other-links:hover .mega-menu {
   background-color: var(--main-color-alt);
 }
 /*end discount section*/
+
+/*start footer*/
+footer {
+  background-color: #191919;
+  color: #b9b9b9;
+}
+footer .container {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 40px;
+}
+footer .box1 h2 {
+  color: white;
+  font-size: 50px;
+}
+footer .box1 .icons {
+  display: flex;
+  gap: 10px;
+  width: fit-content;
+}
+footer .box1 .icons a {
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-color: #313131;
+  color: #b9b9b9;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  transition-duration: var(--main-transition-duration);
+}
+footer .box1 .icons a:first-child:hover {
+  background-color: #1877f2;
+}
+footer .box1 .icons a:nth-child(2):hover {
+  background-color: #1da1f2;
+}
+footer .box1 .icons a:last-child:hover {
+  background-color: #cd201f;
+}
+footer .box1 p {
+  line-height: 1.8;
+  font-size: 16px;
+}
+footer .box2 li {
+  padding: 15px 0;
+  transition-duration: var(--main-transition-duration);
+}
+footer .box2 li:not(:last-child) {
+  border-bottom: 1px solid #444;
+}
+footer .box2 li::before {
+  font-family: FontAwesome;
+  content: "\f101";
+  color: var(--main-color);
+  margin-right: 10px;
+}
+footer .box2 li:hover {
+  padding-left: 10px;
+}
+footer .box2 li a {
+  color: #b9b9b9;
+  transition-duration: var(--main-transition-duration);
+}
+footer .box2 li:hover a {
+  color: white;
+}
+footer .box3 > div {
+  display: flex;
+  align-items: center;
+}
+footer .box3 > div:nth-child(2) {
+  margin: 30px 0;
+}
+footer .box3 i {
+  text-align: center;
+  margin-right: 10px;
+  font-size: 24px;
+  color: var(--main-color);
+  width: 30px;
+}
+footer .box3 p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+footer .box4 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  align-content: flex-start;
+}
+footer .box4 .image {
+  padding: 3px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 75px;
+  height: 75px;
+}
+footer .box4 img {
+  max-width: 100%;
+}
+@media (max-width: 768px) {
+  footer .container {
+    text-align: center;
+  }
+  footer .box1 .icons {
+    margin: auto;
+  }
+  footer .box3 > div {
+    flex-direction: column;
+    gap: 10px;
+  }
+  footer .box4 {
+    justify-content: center;
+  }
+}
+footer > p {
+  padding: 20px;
+  color: white;
+  text-align: center;
+  position: relative;
+  border-top: 1px solid #444;
+}
+/*end footer*/
